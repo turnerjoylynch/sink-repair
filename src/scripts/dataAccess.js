@@ -1,4 +1,6 @@
 const API = "http://localhost:8088"
+const applicationState = {requests:[]}
+
 
 export const fetchRequests = () => {
     return fetch(`${API}/requests`)
@@ -9,6 +11,10 @@ export const fetchRequests = () => {
                 applicationState.requests = serviceRequests
             }
         )
+}
+
+export const getRequests = () => {
+    return applicationState.requests
 }
 
 export const sendRequest = (userServiceRequest) => {

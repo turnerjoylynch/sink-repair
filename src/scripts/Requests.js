@@ -1,4 +1,4 @@
-import { fetchRequests } from "./dataAccess.js"
+import { fetchRequests, getRequests } from "./dataAccess.js"
 
 const mainContainer = document.querySelector("#container")
 
@@ -20,7 +20,7 @@ const convertRequestToListElement = (request) => {
 }
 
 export const Requests = () => {
-    const requests = fetchRequests()
+    const requests = getRequests()
 
     let html = `
         <ul>
